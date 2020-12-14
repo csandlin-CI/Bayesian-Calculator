@@ -1,8 +1,9 @@
 import "./App.css";
-import ApplicationViews from "./components/ApplicationViews";
-import API from "./components/API";
+import React from "react";
+import { APIProvider } from "./components/API";
+import { ApplicationViews } from "./components/ApplicationViews";
 
-function App() {
+export const App = () => (
   /* 
   test call to get list of tests and log in console
 
@@ -22,13 +23,11 @@ function App() {
 
   */
 
-  return (
-    <div className="App">
-      <div className="App-Main">
+  <div className="App">
+    <div className="App-Main">
+      <APIProvider>
         <ApplicationViews />
-      </div>
+      </APIProvider>
     </div>
-  );
-}
-
-export default App;
+  </div>
+);
