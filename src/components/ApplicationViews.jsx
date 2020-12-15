@@ -6,18 +6,6 @@ import { APIContext } from "./API";
 import { ResultsPage } from "./ResultsPage";
 
 export const ApplicationViews = () => {
-  const { listOfTests, getListOfTests } = useContext(APIContext);
-
-  useEffect(() => {
-    getListOfTests();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    console.log("UPDATED list of tests");
-    console.log(listOfTests);
-  }, [listOfTests]);
-
   return (
     <>
       <APIProvider>
@@ -28,14 +16,6 @@ export const ApplicationViews = () => {
       <Route exact path="/:id">
         <ResultsPage />
       </Route>
-
-      {/* {listOfTests.map((lot) => (
-        <APIProvider key={lot.id}>
-          <Route path="/:id">
-            <ResultsPage />
-          </Route>
-        </APIProvider>
-      ))} */}
     </>
   );
 };

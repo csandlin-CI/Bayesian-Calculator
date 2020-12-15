@@ -10,10 +10,7 @@ export const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    console.log("UPDATED list of tests");
-    console.log(listOfTests);
-  }, [listOfTests]);
+  useEffect(() => {}, [listOfTests]);
 
   return (
     <div>

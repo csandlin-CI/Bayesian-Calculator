@@ -12,6 +12,7 @@ export const APIContext = React.createContext();
 
 export const APIProvider = (props) => {
   const [listOfTests, setListOfTests] = useState([]);
+  const [singleTest, setSingleTest] = useState([]);
 
   const getListOfTests = () => {
     return fetch(
@@ -26,11 +27,26 @@ export const APIProvider = (props) => {
       .then((e) => e.json())
       .then(setListOfTests);
   };
+  const getSingleTest = (experiment_id) => {
+    return fetch(
+      `https://api.optimizely.com/v2/experiments/${experiment_id}/results`,
+      {
+        headers: new Headers({
+          Authorization:
+            "Bearer 2:1NrjxYXe1NHK3h1qaj1bmT2X6sU2vS-aWdRmSbq918Z9LHUrno3Y",
+        }),
+      }
+    )
+      .then((e) => e.json())
+      .then(setSingleTest);
+  };
   return (
     <APIContext.Provider
       value={{
         listOfTests,
         getListOfTests,
+        singleTest,
+        getSingleTest,
       }}
     >
       {props.children}
