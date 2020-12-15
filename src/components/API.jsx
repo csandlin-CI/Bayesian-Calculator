@@ -13,6 +13,7 @@ export const APIContext = React.createContext();
 export const APIProvider = (props) => {
   const [listOfTests, setListOfTests] = useState([]);
   const [singleTest, setSingleTest] = useState([]);
+  const [bayCalc, setBayCalc] = useState([]);
 
   const getListOfTests = () => {
     return fetch(
@@ -40,6 +41,13 @@ export const APIProvider = (props) => {
       .then((e) => e.json())
       .then(setSingleTest);
   };
+  const getBayCalc = (custA, convA, reveA, custB, convB, reveB) => {
+    return fetch(
+      `https://prod.integrations.exponea.com/arpu?custA=${custA}&convA=${convA}&reveA=${reveA}&custB=${custB}&convB=${convB}&reveB=${reveB}`
+    )
+      .then((e) => e.json())
+      .then(setBayCalc);
+  };
   return (
     <APIContext.Provider
       value={{
@@ -47,6 +55,8 @@ export const APIProvider = (props) => {
         getListOfTests,
         singleTest,
         getSingleTest,
+        bayCalc,
+        getBayCalc,
       }}
     >
       {props.children}

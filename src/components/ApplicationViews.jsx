@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Route, Switch } from "react-router-dom";
 import { APIProvider } from "./API";
 import { Home } from "./Home";
