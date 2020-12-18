@@ -19,7 +19,7 @@ export const App = () => (
 
   /* 
   sample call to bayesian calc
-  https://prod.integrations.exponea.com/arpu?custA=100&convA=10&reveA=25&custB=100&convB=25&reveB=50%27).done(function(json)
+  https://prod.integrations.exponea.com/arpu?custA=100&convA=10&reveA=25&custB=100&convB=25&reveB=50).done(function(json)
 
   */
 

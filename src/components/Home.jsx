@@ -10,18 +10,22 @@ export const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    console.log("UPDATED list of tests");
-    console.log(listOfTests);
-  }, [listOfTests]);
+  useEffect(() => {}, [listOfTests]);
+
+  // useEffect(() => console.log(listOfTests), [listOfTests]);
 
   return (
     <div>
-      {listOfTests.map((lot) => (
-        <div key={lot.id} className="test-line-item">
-          <Link to={`${lot.id}`}>{lot.name}</Link>
-        </div>
-      ))}
+      {listOfTests.map((lot) =>
+        lot.status !== "not_started" ? (
+          <div key={lot.id} className="test-line-item">
+            <Link to={`${lot.id}`}>{lot.name}</Link>
+            <p>{lot.status}</p>
+          </div>
+        ) : (
+          <div key={lot.id}>{null}</div>
+        )
+      )}
     </div>
   );
 };

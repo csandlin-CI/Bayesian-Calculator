@@ -1,0 +1,288 @@
+{
+  "confidence_threshold": 0.9,
+  "end_time": "2020-12-17T18:45:00.000000Z",
+  "experiment_id": 19648602071,
+  "metrics": [
+    {
+      "aggregator": "sum",
+      "event_id": 19624741717,
+      "field": "revenue",
+      "name": "Survival - Complete",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 0.0,
+          "samples": 53,
+          "value": 0.0,
+          "variance": 0.0,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 348.83720930232556,
+          "samples": 43,
+          "value": 15000.0,
+          "variance": 2785289.345592212,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "unique",
+      "event_id": 19624741717,
+      "name": "Survival - Complete",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 0.018867924528301886,
+          "samples": 53,
+          "value": 1.0,
+          "variance": 0.018511925952296192,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "value": 1.4651162790697674,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 0.046511627906976744,
+          "samples": 43,
+          "value": 2.0,
+          "variance": 0.04434829637641969,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "sum",
+      "event_id": 19591094508,
+      "field": "revenue",
+      "name": "Survival - Add to Cart",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 264.1509433962264,
+          "samples": 53,
+          "value": 14000.0,
+          "variance": 1175507.297970808,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "value": 1.6411960132890364,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 697.6744186046511,
+          "samples": 43,
+          "value": 30000.0,
+          "variance": 11141157.382368848,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "unique",
+      "event_id": 19591094508,
+      "name": "Survival - Add to Cart",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 0.05660377358490566,
+          "samples": 53,
+          "value": 3.0,
+          "variance": 0.053399786400854396,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "worse",
+            "significance": 0.0,
+            "value": -0.17829457364341084,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 0.046511627906976744,
+          "samples": 43,
+          "value": 2.0,
+          "variance": 0.04434829637641969,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "unique",
+      "event_id": 18136450528,
+      "name": "Fund - Complete",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 0.018867924528301886,
+          "samples": 53,
+          "value": 1.0,
+          "variance": 0.018511925952296192,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "value": 1.4651162790697674,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 0.046511627906976744,
+          "samples": 43,
+          "value": 2.0,
+          "variance": 0.04434829637641969,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "sum",
+      "event_id": 18136450528,
+      "field": "revenue",
+      "name": "Fund - Complete",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 47.16981132075472,
+          "samples": 53,
+          "value": 2500.0,
+          "variance": 115699.5372018512,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "value": 6.395348837209302,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 348.83720930232556,
+          "samples": 43,
+          "value": 15000.0,
+          "variance": 2785289.345592212,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "unique",
+      "event_id": 18116511108,
+      "name": "CDSP - Complete",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 0.018867924528301886,
+          "samples": 53,
+          "value": 1.0,
+          "variance": 0.018511925952296192,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "worse",
+            "significance": 0.0,
+            "value": -1.0,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 0.0,
+          "samples": 43,
+          "value": 0.0,
+          "variance": 0.0,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    }
+  ],
+  "reach": {
+    "baseline_count": 53,
+    "baseline_reach": 0.5520833333333334,
+    "total_count": 96,
+    "treatment_count": 43,
+    "treatment_reach": 0.4479166666666667,
+    "variations": {
+      "19589645493": {
+        "count": 43,
+        "name": "Variation #1",
+        "variation_id": "19589645493",
+        "variation_reach": 0.4479166666666667
+      },
+      "19673451658": {
+        "count": 53,
+        "name": "Original",
+        "variation_id": "19673451658",
+        "variation_reach": 0.5520833333333334
+      }
+    }
+  },
+  "start_time": "2020-12-15T18:27:00.000000Z",
+  "stats_config": {
+    "confidence_level": 0.9,
+    "difference_type": "relative",
+    "epoch_enabled": false
+  }
+}
