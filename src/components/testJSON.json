@@ -1,40 +1,221 @@
 {
   "confidence_threshold": 0.9,
-  "end_time": "2020-12-15T18:25:00.000000Z",
-  "experiment_id": 19573961099,
+  "end_time": "2020-12-17T18:45:00.000000Z",
+  "experiment_id": 19648602071,
   "metrics": [
     {
-      "aggregator": "unique",
-      "event_id": 18140011691,
-      "name": "CDSP - Add to Cart",
+      "aggregator": "sum",
+      "event_id": 19624741717,
+      "field": "revenue",
+      "name": "Survival - Complete",
       "results": {
-        "19583591402": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 0.0,
+          "samples": 53,
+          "value": 0.0,
+          "variance": 0.0,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
           "is_baseline": false,
           "level": "variation",
           "lift": {
-            "confidence_interval": [-0.06805255504853273, 0.04335325508849647],
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 348.83720930232556,
+          "samples": 43,
+          "value": 15000.0,
+          "variance": 2785289.345592212,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "unique",
+      "event_id": 19624741717,
+      "name": "Survival - Complete",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 0.018867924528301886,
+          "samples": 53,
+          "value": 1.0,
+          "variance": 0.018511925952296192,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "value": 1.4651162790697674,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 0.046511627906976744,
+          "samples": 43,
+          "value": 2.0,
+          "variance": 0.04434829637641969,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "sum",
+      "event_id": 19591094508,
+      "field": "revenue",
+      "name": "Survival - Add to Cart",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 264.1509433962264,
+          "samples": 53,
+          "value": 14000.0,
+          "variance": 1175507.297970808,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "value": 1.6411960132890364,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 697.6744186046511,
+          "samples": 43,
+          "value": 30000.0,
+          "variance": 11141157.382368848,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "unique",
+      "event_id": 19591094508,
+      "name": "Survival - Add to Cart",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 0.05660377358490566,
+          "samples": 53,
+          "value": 3.0,
+          "variance": 0.053399786400854396,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
             "is_significant": false,
             "lift_status": "worse",
-            "significance": 0.049972152760550115,
-            "value": -0.017267179965480217,
-            "visitors_remaining": 72101
+            "significance": 0.0,
+            "value": -0.17829457364341084,
+            "visitors_remaining": 9223372036854775807
           },
-          "name": "Sponsor %%FirstName%% & Checkout",
-          "rate": 0.23433739333381956,
-          "samples": 13711,
-          "value": 3213.0,
-          "variance": 0.17942337941933031,
-          "variation_id": "19583591402"
-        },
-        "19599062236": {
+          "name": "Variation #1",
+          "rate": 0.046511627906976744,
+          "samples": 43,
+          "value": 2.0,
+          "variance": 0.04434829637641969,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "unique",
+      "event_id": 18136450528,
+      "name": "Fund - Complete",
+      "results": {
+        "19673451658": {
           "is_baseline": true,
           "level": "variation",
-          "name": "Select this child",
-          "rate": 0.23845483589892535,
-          "samples": 13772,
-          "value": 3284.0,
-          "variance": 0.18159412713534193,
-          "variation_id": "19599062236"
+          "name": "Original",
+          "rate": 0.018867924528301886,
+          "samples": 53,
+          "value": 1.0,
+          "variance": 0.018511925952296192,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "value": 1.4651162790697674,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 0.046511627906976744,
+          "samples": 43,
+          "value": 2.0,
+          "variance": 0.04434829637641969,
+          "variation_id": "19589645493"
+        }
+      },
+      "scope": "visitor",
+      "winning_direction": "increasing"
+    },
+    {
+      "aggregator": "sum",
+      "event_id": 18136450528,
+      "field": "revenue",
+      "name": "Fund - Complete",
+      "results": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 47.16981132075472,
+          "samples": 53,
+          "value": 2500.0,
+          "variance": 115699.5372018512,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
+          "is_baseline": false,
+          "level": "variation",
+          "lift": {
+            "is_significant": false,
+            "lift_status": "better",
+            "significance": 0.0,
+            "value": 6.395348837209302,
+            "visitors_remaining": 9223372036854775807
+          },
+          "name": "Variation #1",
+          "rate": 348.83720930232556,
+          "samples": 43,
+          "value": 15000.0,
+          "variance": 2785289.345592212,
+          "variation_id": "19589645493"
         }
       },
       "scope": "visitor",
@@ -45,70 +226,32 @@
       "event_id": 18116511108,
       "name": "CDSP - Complete",
       "results": {
-        "19583591402": {
+        "19673451658": {
+          "is_baseline": true,
+          "level": "variation",
+          "name": "Original",
+          "rate": 0.018867924528301886,
+          "samples": 53,
+          "value": 1.0,
+          "variance": 0.018511925952296192,
+          "variation_id": "19673451658"
+        },
+        "19589645493": {
           "is_baseline": false,
           "level": "variation",
           "lift": {
-            "confidence_interval": [-0.097938864428223, 0.2528362033912083],
             "is_significant": false,
-            "lift_status": "better",
+            "lift_status": "worse",
             "significance": 0.0,
-            "value": 0.08350283767831712,
-            "visitors_remaining": 27582
+            "value": -1.0,
+            "visitors_remaining": 9223372036854775807
           },
-          "name": "Sponsor %%FirstName%% & Checkout",
-          "rate": 0.05098096418933703,
-          "samples": 13711,
-          "value": 699.0,
-          "variance": 0.04838190547966256,
-          "variation_id": "19583591402"
-        },
-        "19599062236": {
-          "is_baseline": true,
-          "level": "variation",
-          "name": "Select this child",
-          "rate": 0.047051989544002325,
-          "samples": 13772,
-          "value": 648.0,
-          "variance": 0.04483809982395342,
-          "variation_id": "19599062236"
-        }
-      },
-      "scope": "visitor",
-      "winning_direction": "increasing"
-    },
-    {
-      "aggregator": "count",
-      "event_id": 18116511108,
-      "name": "CDSP - Complete",
-      "results": {
-        "19583591402": {
-          "is_baseline": false,
-          "level": "variation",
-          "lift": {
-            "confidence_interval": [-0.10289867686388576, 0.3295222670149617],
-            "is_significant": false,
-            "lift_status": "better",
-            "significance": 0.0,
-            "value": 0.10084752236502958,
-            "visitors_remaining": 25034
-          },
-          "name": "Sponsor %%FirstName%% & Checkout",
-          "rate": 0.06746407993581796,
-          "samples": 13711,
-          "value": 925.0,
-          "variance": 0.11425831274592431,
-          "variation_id": "19583591402"
-        },
-        "19599062236": {
-          "is_baseline": true,
-          "level": "variation",
-          "name": "Select this child",
-          "rate": 0.06128376415916352,
-          "samples": 13772,
-          "value": 844.0,
-          "variance": 0.09862594416567426,
-          "variation_id": "19599062236"
+          "name": "Variation #1",
+          "rate": 0.0,
+          "samples": 43,
+          "value": 0.0,
+          "variance": 0.0,
+          "variation_id": "19589645493"
         }
       },
       "scope": "visitor",
@@ -116,27 +259,27 @@
     }
   ],
   "reach": {
-    "baseline_count": 13772,
-    "baseline_reach": 0.5011097769530255,
-    "total_count": 27483,
-    "treatment_count": 13711,
-    "treatment_reach": 0.4988902230469745,
+    "baseline_count": 53,
+    "baseline_reach": 0.5520833333333334,
+    "total_count": 96,
+    "treatment_count": 43,
+    "treatment_reach": 0.4479166666666667,
     "variations": {
-      "19583591402": {
-        "count": 13711,
-        "name": "Sponsor %%FirstName%% & Checkout",
-        "variation_id": "19583591402",
-        "variation_reach": 0.4988902230469745
+      "19589645493": {
+        "count": 43,
+        "name": "Variation #1",
+        "variation_id": "19589645493",
+        "variation_reach": 0.4479166666666667
       },
-      "19599062236": {
-        "count": 13772,
-        "name": "Select this child",
-        "variation_id": "19599062236",
-        "variation_reach": 0.5011097769530255
+      "19673451658": {
+        "count": 53,
+        "name": "Original",
+        "variation_id": "19673451658",
+        "variation_reach": 0.5520833333333334
       }
     }
   },
-  "start_time": "2020-12-09T20:54:58.000000Z",
+  "start_time": "2020-12-15T18:27:00.000000Z",
   "stats_config": {
     "confidence_level": 0.9,
     "difference_type": "relative",

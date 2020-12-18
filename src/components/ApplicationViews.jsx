@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { APIProvider } from "./API";
 import { Home } from "./Home";
 import { APIContext } from "./API";
-import { ResultsPage } from "./ResultsPage";
+import { ExperimentPage } from "./ExperimentPage";
 
 export const ApplicationViews = () => {
   return (
@@ -14,7 +14,7 @@ export const ApplicationViews = () => {
         </Route>
       </APIProvider>
       <Route exact path="/:id">
-        <ResultsPage />
+        <ExperimentPage />
       </Route>
     </>
   );

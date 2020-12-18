@@ -12,13 +12,20 @@ export const Home = () => {
 
   useEffect(() => {}, [listOfTests]);
 
+  // useEffect(() => console.log(listOfTests), [listOfTests]);
+
   return (
     <div>
-      {listOfTests.map((lot) => (
-        <div key={lot.id} className="test-line-item">
-          <Link to={`${lot.id}`}>{lot.name}</Link>
-        </div>
-      ))}
+      {listOfTests.map((lot) =>
+        lot.status !== "not_started" ? (
+          <div key={lot.id} className="test-line-item">
+            <Link to={`${lot.id}`}>{lot.name}</Link>
+            <p>{lot.status}</p>
+          </div>
+        ) : (
+          <div key={lot.id}>{null}</div>
+        )
+      )}
     </div>
   );
 };
