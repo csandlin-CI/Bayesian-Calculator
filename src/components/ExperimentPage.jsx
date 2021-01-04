@@ -28,20 +28,20 @@ export const ExperimentPage = () => {
     }
   }, [singleTest]);
 
-  useEffect(() => {
-    console.log("singleTest", singleTest);
-    console.log("singleTestMeta", singleTestMeta);
-    console.log("metrics", metrics);
-  }, [metrics]);
+  // useEffect(() => {
+  //   console.log("singleTest", singleTest);
+  //   console.log("singleTestMeta", singleTestMeta);
+  //   console.log("metrics", metrics);
+  // }, [metrics]);
 
-  // Run through the metrics and seperate each result out
-  useEffect(() => {
-    for (let i = 0; i < metrics.length; i++) {
-      for (let key in metrics[i].results) {
-        console.log(metrics[i].name, metrics[i].results[key]);
-      }
-    }
-  }, [metrics]);
+  // // Run through the metrics and seperate each result out
+  // useEffect(() => {
+  //   for (let i = 0; i < metrics.length; i++) {
+  //     for (let key in metrics[i].results) {
+  //       console.log(metrics[i].name, metrics[i].results[key]);
+  //     }
+  //   }
+  // }, [metrics]);
 
   //   useEffect(() => {
   //     getBayCalc(100, 10, 25, 100, 25, 50);
