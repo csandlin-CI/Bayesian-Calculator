@@ -7,15 +7,24 @@ export const Metric = ({ metricData }) => {
     console.log("metricData", metricData);
   }, [metricData]);
 
+  function convPerVisitor(num) {
+    return +(Math.round(num + "e+3") + "e-3");
+  }
+
+  function convRate(num) {
+    let newNum = num * 100;
+    return +(Math.round(newNum + "e+2") + "e-2") + "%";
+  }
+
   function generateTableEl() {
-    let dom = [];
+    let domList = [];
 
     for (let i = 0; i < Object.keys(metricData.results).length - 1; i++) {
       for (let key in metricData.results) {
-        console.log(
-          `metricData | ${key} | ${metricData.name} | ${metricData.aggregator}`
-        );
-        dom.push(
+        // console.log(
+        //   `metricData | ${key} | ${metricData.name} | ${metricData.aggregator}`
+        // );
+        domList.push(
           <tr key={metricData.results[key].rate + i}>
             <td>{metricData.results[key].name}</td>
 
@@ -24,21 +33,27 @@ export const Metric = ({ metricData }) => {
               <br></br>
               {metricData.results[key].samples}
             </td>
-            <td>{metricData.results[key].rate}</td>
+            <td>
+              {metricData.aggregator === "unique"
+                ? convRate(metricData.results[key].rate)
+                : convPerVisitor(metricData.results[key].rate)}
+            </td>
+            <td>
+              {metricData.results[key].hasOwnProperty("lift") &&
+              metricData.results[key].lift.lift_status === "better"
+                ? "+"
+                : ""}
+              {metricData.results[key].hasOwnProperty("lift")
+                ? convRate(metricData.results[key].lift.value)
+                : "—"}
+            </td>
           </tr>
         );
       }
     }
-    dom.reverse();
-    return dom;
+    domList.reverse();
+    return domList;
   }
-
-  // // Run through the metricData and seperate each result out
-  // useEffect(() => {
-  //   for (let key in metricData.results) {
-  //     // console.log(metricData.name, metricData.results[key].samples);
-  //   }
-  // }, [metricData]);
 
   return (
     <>
