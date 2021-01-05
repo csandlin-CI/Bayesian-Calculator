@@ -3,9 +3,12 @@ import { APIContext } from "./API";
 import { Link } from "react-router-dom";
 
 export const Metric = ({ metricData }) => {
-  useEffect(() => {
-    console.log("metricData", metricData);
-  }, [metricData]);
+  const { bayCalc, getBayCalc } = useContext(APIContext);
+
+  // CustA, convA, reveA, custB, convB, reveB;
+  const [bayesianToSend, setBayesianToSend] = useState([]);
+
+  let baseNums = [];
 
   function convPerVisitor(num) {
     return +(Math.round(num + "e+3") + "e-3");
@@ -16,6 +19,39 @@ export const Metric = ({ metricData }) => {
     return +(Math.round(newNum + "e+2") + "e-2") + "%";
   }
 
+  function generateBayesianNums(arrayOfNums) {
+    return getBayCalc(
+      // arrayOfNums[0],
+      // arrayOfNums[1],
+      // 0,
+      // arrayOfNums[2],
+      // arrayOfNums[3],
+      // 0
+      1000,
+      100,
+      0,
+      1000,
+      80,
+      0
+    ).then(() => console.log(bayCalc));
+  }
+
+  useEffect(() => {
+    for (let i = 0; i < Object.keys(metricData.results).length - 1; i++) {
+      for (let key in metricData.results) {
+        // console.log(
+        //   `metricData | ${key} | ${metricData.name} | ${metricData.aggregator}`
+        // );
+
+        baseNums.push(
+          metricData.results[key].samples,
+          metricData.results[key].value
+        );
+      }
+    }
+    let x = generateBayesianNums(baseNums);
+  }, [metricData]);
+
   function generateTableEl() {
     let domList = [];
 
@@ -24,6 +60,12 @@ export const Metric = ({ metricData }) => {
         // console.log(
         //   `metricData | ${key} | ${metricData.name} | ${metricData.aggregator}`
         // );
+
+        // baseNums.push(
+        //   metricData.results[key].samples,
+        //   metricData.results[key].value
+        // );
+
         domList.push(
           <tr key={metricData.results[key].rate + i}>
             <td>{metricData.results[key].name}</td>
@@ -48,7 +90,7 @@ export const Metric = ({ metricData }) => {
                 ? convRate(metricData.results[key].lift.value)
                 : "—"}
             </td>
-            <td>
+            <td className="stat-sig">
               {metricData.results[key].hasOwnProperty("lift")
                 ? metricData.results[key].lift.significance >= 1
                   ? metricData.results[key].lift.significance
@@ -59,6 +101,7 @@ export const Metric = ({ metricData }) => {
         );
       }
     }
+
     domList.reverse();
     return domList;
   }
