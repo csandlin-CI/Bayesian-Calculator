@@ -52,7 +52,7 @@ export const Metric = ({ metricData }) => {
               {metricData.results[key].hasOwnProperty("lift")
                 ? metricData.results[key].lift.significance >= 1
                   ? metricData.results[key].lift.significance
-                  : "<1%"
+                  : "< 1%"
                 : "—"}
             </td>
           </tr>
