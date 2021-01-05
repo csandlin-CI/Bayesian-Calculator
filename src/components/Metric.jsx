@@ -39,12 +39,20 @@ export const Metric = ({ metricData }) => {
                 : convPerVisitor(metricData.results[key].rate)}
             </td>
             <td>
+              {/* if it has the lift object and it's positive, add a plus in front */}
               {metricData.results[key].hasOwnProperty("lift") &&
               metricData.results[key].lift.lift_status === "better"
                 ? "+"
                 : ""}
               {metricData.results[key].hasOwnProperty("lift")
                 ? convRate(metricData.results[key].lift.value)
+                : "—"}
+            </td>
+            <td>
+              {metricData.results[key].hasOwnProperty("lift")
+                ? metricData.results[key].lift.significance >= 1
+                  ? metricData.results[key].lift.significance
+                  : "< 1%"
                 : "—"}
             </td>
           </tr>
