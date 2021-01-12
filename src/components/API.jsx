@@ -73,7 +73,8 @@ export const APIProvider = (props) => {
     )
       .then(handleErrors)
       .then((e) => e.json())
-      .then(setBayCalc);
+      .then(setBayCalc)
+      .catch((error) => console.log(error));
   };
   return (
     <APIContext.Provider
