@@ -1,11 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { APIContext } from "./API";
 import { Link } from "react-router-dom";
+import { TableRow } from "./TableRow";
 
 export const Metric = ({ metricData }) => {
-  useEffect(() => {
-    console.log("metricData", metricData);
-  }, [metricData]);
+  const { bayCalc, getBayCalc } = useContext(APIContext);
+  const [bayesianNums, setBayesianNums] = useState({});
+
+  // CustA, convA, reveA, custB, convB, reveB;
+
+  let optimizelyNums = [];
+  let tableRowArray = [];
 
   function convPerVisitor(num) {
     return +(Math.round(num + "e+3") + "e-3");
@@ -16,51 +21,44 @@ export const Metric = ({ metricData }) => {
     return +(Math.round(newNum + "e+2") + "e-2") + "%";
   }
 
-  function generateTableEl() {
-    let domList = [];
+  // useEffect(() => {
+  //   for (let i = 0; i < Object.keys(metricData.results).length - 1; i++) {
+  //     for (let key in metricData.results) {
+  //       console.log(
+  //         `metricData | ${key} | ${metricData.results[key].name} | ${metricData.aggregator}`
+  //       );
 
+  //       optimizelyNums.push(
+  //         metricData.results[key].samples,
+  //         metricData.results[key].value
+  //       );
+  //     }
+  //   }
+  //   getBayCalc(1000, 100, 0, 1000, 110, 0).then(() => console.log(bayCalc));
+  // }, [metricData]);
+
+  function generateTableRows() {
     for (let i = 0; i < Object.keys(metricData.results).length - 1; i++) {
+      console.log("metricData", metricData);
       for (let key in metricData.results) {
-        // console.log(
-        //   `metricData | ${key} | ${metricData.name} | ${metricData.aggregator}`
-        // );
-        domList.push(
-          <tr key={metricData.results[key].rate + i}>
-            <td>{metricData.results[key].name}</td>
-
-            <td>
-              {metricData.results[key].value}
-              <br></br>
-              {metricData.results[key].samples}
-            </td>
-            <td>
-              {metricData.aggregator === "unique"
-                ? convRate(metricData.results[key].rate)
-                : convPerVisitor(metricData.results[key].rate)}
-            </td>
-            <td>
-              {/* if it has the lift object and it's positive, add a plus in front */}
-              {metricData.results[key].hasOwnProperty("lift") &&
-              metricData.results[key].lift.lift_status === "better"
-                ? "+"
-                : ""}
-              {metricData.results[key].hasOwnProperty("lift")
-                ? convRate(metricData.results[key].lift.value)
-                : "—"}
-            </td>
-            <td>
-              {metricData.results[key].hasOwnProperty("lift")
-                ? metricData.results[key].lift.significance >= 1
-                  ? metricData.results[key].lift.significance
-                  : "< 1%"
-                : "—"}
-            </td>
-          </tr>
+        console.log(
+          `!!metricData | ${key} | ${metricData.results[key].name} | ${metricData.aggregator}`,
+          metricData.results[key]
         );
+
+        // optimizelyNums.push(
+        //   metricData.results[key].samples,
+        //   metricData.results[key].value
+        // );
+        tableRowArray.push(
+          <TableRow metricData={metricData} outerLoopKey={key} iteration={i} />
+        );
+
+        // return <TableRow metricData={metricData} />;
+        //****** if you return above, it stops the loop. Remove other loop from TableRow and figure out how to make it loop here but not in table row
       }
     }
-    domList.reverse();
-    return domList;
+    return tableRowArray;
   }
 
   return (
@@ -101,7 +99,7 @@ export const Metric = ({ metricData }) => {
             </th>
           </tr>
         </thead>
-        <tbody>{generateTableEl()}</tbody>
+        {generateTableRows()}
       </table>
     </>
   );
